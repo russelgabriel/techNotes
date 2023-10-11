@@ -26,6 +26,7 @@ app.use(cookieParser()) // parse cookies
 app.use('/', express.static(path.join(__dirname, '/public'))) // serve static files
 
 app.use('/', require('./routes/root')) // serve root routes
+app.use('/users', require('./routes/root'))
 
 app.all('*', (req, res) => {
   res.status(404)
